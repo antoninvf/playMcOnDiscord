@@ -15,7 +15,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = nextcord.Client(intents=nextcord.Intents.all())
 
-gradioclient = gradio_client.Client("http://127.0.0.1:7860/")
+#gradioclient = gradio_client.Client("http://127.0.0.1:7860/")
 
 bot_ownerid = 222002051960406026
 
@@ -63,13 +63,13 @@ async def speak(string):
     protect = 0.33
     fn_index = 0
 
-    job = gradioclient.submit(voice, speed, string, edge_voice, transpose, pitch_method, index_rate, protect, fn_index=fn_index)
+    #job = gradioclient.submit(voice, speed, string, edge_voice, transpose, pitch_method, index_rate, protect, fn_index=fn_index)
 
     # TODO: MAKE IT WORK
 
-    if client.voice_clients:
-        vc = client.voice_clients[0]
-        vc.play(nextcord.FFmpegPCMAudio(job.result()[2]))
+    #if client.voice_clients:
+    #    vc = client.voice_clients[0]
+    #    vc.play(nextcord.FFmpegPCMAudio(job.result()[2]))
 
 
 async def hold(key, howlong):
